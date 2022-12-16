@@ -242,7 +242,8 @@ STDERR with `org-babel-eval-error-notify'."
                                 ""
                                 (cdr (assq 'input vars)))))
     (if debug-enabled
-        (let ((oxygen-xml-file "testdata.xml")
+        (let ((oxygen-xml-file (expand-file-name (concat ob-xslt-oxygen-project-path
+                                                         "/testdata.xml")))
               (oxygen-project-file (expand-file-name (concat ob-xslt-oxygen-project-path
                                                              "/debug.xpr"))))
           (with-temp-file oxygen-xml-file
